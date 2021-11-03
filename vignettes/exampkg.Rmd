@@ -1,0 +1,31 @@
+---
+title: "exampkg"
+author: "Alexey Gudakov"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{exampkg}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+Some text
+
+```{r setenv, echo=F, message=FALSE}
+library(exampkg)
+
+```
+
+```{r echo = T, message=FALSE}
+make_filename(2014)
+```
+
+```{r echo = T, message=FALSE}
+df_2014 <- fars_read_years(years = 2014)
+df_2014[[1]]
+```
+
+```{r echo=TRUE, message=F}
+renge_year <- fars_read_years(years = 2013:2015)
+renge_year
+```
